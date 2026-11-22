@@ -5,18 +5,18 @@ describe('Testes front-end ABI', () => {
     cy.visit('/')
   })
 
-  it('Valida criação de usuário administrador dinâmico', () => {
+  it('[CT01] - Valida criação de usuário administrador dinâmico', () => {
     const numero = (Math.random() * 1000000)
     const email = `${numero}@teste.com`
 
     cy.criandoUsuario('Teste', email ,'123');  
   });
 
-  it('Verificando e-mail inválido', () => {
+  it('[CT02] - Valida e-mail inválido', () => {
     cy.validaEmailInvalido();
   });
 
-  it('Valida obrigatoriedade dos campos (Nome, E-mail, Senha)', () => {
+  it('[CT03] - Valida obrigatoriedade dos campos (Nome, E-mail, Senha)', () => {
     cy.validaObrigatoriedadeCadastro();
   })
 
