@@ -1,15 +1,22 @@
 /// <reference types="cypress" />
 
-describe('Tela Login', () => {
+describe('Testes front-end ABI', () => {
   beforeEach(() => {
     cy.visit('/')
   })
 
-  it('Criando novo usuário', () => {
-    cy.criandoUsuario('Matheus','matheus_souto@live.com','123');
+  it('Valida criação de usuário adminstrador dinâmico', () => {
+    const numero = (Math.random() * 1000000)
+    const email = `${numero}@teste.com`
+
+    cy.criandoUsuario('Teste', email ,'123');  
   });
 
-  it.only('Valida obrigatoriedade dos campos (Nome, E-mail, Senha)', () => {
+  it('Verificando e-mail inválido', () => {
+    cy.validaEmailInvalido();
+  });
+
+  it('Valida obrigatoriedade dos campos (Nome, E-mail, Senha)', () => {
     cy.validaObrigatoriedadeCadastro();
   })
 
