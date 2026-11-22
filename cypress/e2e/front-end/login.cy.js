@@ -5,7 +5,7 @@ describe('Testes front-end ABI', () => {
     cy.visit('/')
   })
 
-  it('Valida criação de usuário adminstrador dinâmico', () => {
+  it('Valida criação de usuário administrador dinâmico', () => {
     const numero = (Math.random() * 1000000)
     const email = `${numero}@teste.com`
 

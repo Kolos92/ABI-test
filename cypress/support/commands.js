@@ -29,9 +29,35 @@ Cypress.Commands.add('validaEmailInvalido', () => {
     .and('contain.text', 'Email e/ou senha inválidos')
 });
 
+Cypress.Commands.add('buscarUsuariosApi', () => {
+  return cy.request({
+    method: 'GET',
+    url: 'https://serverest.dev/usuarios'
+  })
+})
 
+Cypress.Commands.add('validaUsuarioInvalido', () => {
+  return cy.request({
+    method: 'POST',
+    url: 'https://serverest.dev/login',
+    body: {
+        email: 'testetesteteste@teste.com',
+        password: 'testestest000'
+    },
+    failOnStatusCode: false
+  })
+})
 
-
+Cypress.Commands.add('ValidaEmailInvalido', () => {
+  return cy.request({
+    method: 'POST',
+    url: 'https://serverest.dev/usuarios',
+    body: {
+        email: 'teste.com',
+    },
+    failOnStatusCode: false
+  })
+})
 
 
 
