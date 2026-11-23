@@ -1,4 +1,5 @@
 /// <reference types="cypress" />
+import { faker } from '@faker-js/faker';
 
 describe('Testes front-end ABI', () => {
   beforeEach(() => {
@@ -6,10 +7,9 @@ describe('Testes front-end ABI', () => {
   })
 
   it('[CT01] - Valida criação de usuário administrador dinâmico', () => {
-    const numero = (Math.random() * 1000000)
-    const email = `${numero}@teste.com`
+    const email = faker.internet.email();
 
-    cy.criandoUsuario('Teste', 'teste'+email ,'123');  
+    cy.criandoUsuario('Teste', email ,'123');  
   });
 
   it('[CT02] - Valida e-mail inválido', () => {
