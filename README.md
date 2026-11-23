@@ -7,4 +7,4 @@
 - Material Icon Theme
 - Prettier - Code formatter
 - vscode-icons
-
+- Cypress Snippets

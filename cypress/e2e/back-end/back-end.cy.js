@@ -19,7 +19,7 @@ it('[CT02][POST] - Valida login com usuário inválido', () => {
        })
 });
 
-it('[CT03][POST] - Valida e-mail inválido', () => {
+it('[CT03][POST] - Valida e-mail com formato inválido', () => {
     cy.ValidaEmailInvalido()
         .then((response) => {
             expect(response.status).to.eq(400)

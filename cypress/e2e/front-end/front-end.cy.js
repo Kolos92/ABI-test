@@ -9,7 +9,7 @@ describe('Testes front-end ABI', () => {
     const numero = (Math.random() * 1000000)
     const email = `${numero}@teste.com`
 
-    cy.criandoUsuario('Teste', email ,'123');  
+    cy.criandoUsuario('Teste', 'teste'+email ,'123');  
   });
 
   it('[CT02] - Valida e-mail inválido', () => {
